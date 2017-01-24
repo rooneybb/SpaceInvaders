@@ -1,0 +1,559 @@
+﻿using System;
+using System.Diagnostics;
+
+namespace SpaceInvaders
+{
+    class SpaceInvaders : Azul.Game
+    {
+       /* 
+        Sprite crab1;
+        Sprite crab2;
+        Sprite crab3;
+        Sprite crab4;
+        Sprite crab5;
+        Sprite crab6;
+        Sprite crab7;
+        Sprite crab8;
+        Sprite crab9;
+        Sprite crab10;
+       // Sprite crab11;
+
+        Sprite octopus1;
+        Sprite octopus2;
+        Sprite octopus3;
+        Sprite octopus4;
+        Sprite octopus5;
+        Sprite octopus6;
+        Sprite octopus7;
+        Sprite octopus8;
+        Sprite octopus9;
+        Sprite octopus10;
+        Sprite octopus11;
+
+        Sprite squid1;
+        Sprite squid2;
+        Sprite squid3;
+        Sprite squid4;
+        Sprite squid5;
+        Sprite squid6;
+        Sprite squid7;
+        Sprite squid8;
+        Sprite squid9;
+        Sprite squid10;
+        Sprite squid11;
+        Sprite squid12; */
+
+        Sprite gridSprite;
+
+       // ProxySprite squidProxy;
+
+       /* SpriteBox box1;
+        SpriteBox box2;
+        SpriteBox box3;
+        SpriteBox box4; */
+
+        SpriteBatch crabBatch;
+        SpriteBatch octopusBatch;
+        SpriteBatch squidBatch;
+        SpriteBatch gridBatch;
+
+        GameObjectNode alienGrid;
+        Grid gridReal;
+        //int count = 0;
+
+        //-----------------------------------------------------------------------------
+        // Game::Initialize()
+        //		Allows the engine to perform any initialization it needs to before 
+        //      starting to run.  This is where it can query for any required services 
+        //      and load any non-graphic related content. 
+        //-----------------------------------------------------------------------------
+        public override void Initialize()
+        {
+            // Game Window Device setup
+            this.SetWindowName("Milestone2");
+            this.SetWidthHeight(896, 1024);
+            this.SetClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+            TextureManager.createInstance(3, 1);
+            ImageManager.createInstance(7, 1);
+            SpriteManager.createInstance(50, 1);
+            SpriteBatchManager.createInstance(5, 1);
+            ProxySpriteManager.createInstance(36, 1);
+            GameObjectManager.createInstance(3, 1);
+            
+
+        }
+
+        //-----------------------------------------------------------------------------
+        // Game::LoadContent()
+        //		Allows you to load all content needed for your engine,
+        //	    such as objects, graphics, etc.
+        //-----------------------------------------------------------------------------
+        public override void LoadContent()
+        {
+
+
+
+             gridBatch = SpriteBatchManager.Add(SpriteBatch.NameSpriteBatch.Background, 3, 1);
+             crabBatch = SpriteBatchManager.Add(SpriteBatch.NameSpriteBatch.Aliens, 12, 1);
+             octopusBatch = SpriteBatchManager.Add(SpriteBatch.NameSpriteBatch.Aliens2, 12, 1);
+             squidBatch = SpriteBatchManager.Add(SpriteBatch.NameSpriteBatch.Aliens3, 12, 1);
+           
+
+            TextureManager.Add(Texture.NameTexture.SpaceInvaders, "spaceInvadersSS.tga", Azul.Texture_Filter.NEAREST, Azul.Texture_Filter.NEAREST);
+            Texture invaderSheet = TextureManager.find(Texture.NameTexture.SpaceInvaders);
+
+            ImageManager.Add(Image.NameImage.AlienRow1, invaderSheet.name, 0.0f, 0.0f, 128.0f, 85.0f);
+            Image invaderRect = ImageManager.find(Image.NameImage.AlienRow1);
+
+            ImageManager.Add(Image.NameImage.AlienRow1_2, invaderSheet.name, 128.0f, 0.0f, 128.0f, 85.0f);
+            Image invaderRect_2 = ImageManager.find(Image.NameImage.AlienRow1);
+
+            ImageManager.Add(Image.NameImage.AlienRow2, invaderSheet.name, 256.0f, 0.0f, 128.0f, 85.0f);
+            Image invaderRect2 = ImageManager.find(Image.NameImage.AlienRow2);
+
+            ImageManager.Add(Image.NameImage.AlienRow2_2, invaderSheet.name, 384.0f, 0.0f, 128.0f, 85.0f);
+            Image invaderRect2_2 = ImageManager.find(Image.NameImage.AlienRow1);
+
+            ImageManager.Add(Image.NameImage.AlienRow3, invaderSheet.name, 0.0f, 85.0f, 128.0f, 85.0f);
+            Image invaderRect3 = ImageManager.find(Image.NameImage.AlienRow3);
+
+            ImageManager.Add(Image.NameImage.AlienRow3_2, invaderSheet.name, 128.0f, 85.0f, 128.0f, 85.0f);
+            Image invaderRect3_2 = ImageManager.find(Image.NameImage.AlienRow1);
+
+           /* SpriteManager.Add(Sprite.Name.AlienRow1, invaderRect.name, 50.0f, 600.0f, 50.0f, 75.0f);
+            crab1 = SpriteManager.find(Sprite.Name.AlienRow1);
+
+            SpriteManager.Add(Sprite.Name.AlienRow1, invaderRect.name, 100.0f, 600.0f, 50.0f, 75.0f);
+            crab2 = SpriteManager.find(Sprite.Name.AlienRow1);
+
+            SpriteManager.Add(Sprite.Name.AlienRow1, invaderRect.name, 150.0f, 600.0f, 50.0f, 75.0f);
+            crab3 = SpriteManager.find(Sprite.Name.AlienRow1);
+
+            SpriteManager.Add(Sprite.Name.AlienRow1, invaderRect.name, 200.0f, 600.0f, 50.0f, 75.0f);
+            crab4 = SpriteManager.find(Sprite.Name.AlienRow1);
+
+            SpriteManager.Add(Sprite.Name.AlienRow1, invaderRect.name, 250.0f, 600.0f, 50.0f, 75.0f);
+            crab5 = SpriteManager.find(Sprite.Name.AlienRow1);
+
+            SpriteManager.Add(Sprite.Name.AlienRow1, invaderRect.name, 300.0f, 600.0f, 50.0f, 75.0f);
+            crab6 = SpriteManager.find(Sprite.Name.AlienRow1);
+
+            SpriteManager.Add(Sprite.Name.AlienRow1, invaderRect.name, 350.0f, 600.0f, 50.0f, 75.0f);
+            crab7 = SpriteManager.find(Sprite.Name.AlienRow1);
+
+            SpriteManager.Add(Sprite.Name.AlienRow1, invaderRect.name, 400.0f, 600.0f, 50.0f, 75.0f);
+            crab8 = SpriteManager.find(Sprite.Name.AlienRow1);
+
+            SpriteManager.Add(Sprite.Name.AlienRow1, invaderRect.name, 450.0f, 600.0f, 50.0f, 75.0f);
+            crab9 = SpriteManager.find(Sprite.Name.AlienRow1);
+
+            SpriteManager.Add(Sprite.Name.AlienRow1, invaderRect.name, 500.0f, 600.0f, 50.0f, 75.0f);
+            crab10 = SpriteManager.find(Sprite.Name.AlienRow1);
+
+          //  SpriteManager.Add(Sprite.Name.AlienRow1, invaderRect.name, 550.0f, 600.0f, 50.0f, 75.0f);
+           // crab11 = SpriteManager.find(Sprite.Name.AlienRow1);
+
+            SpriteManager.Add(Sprite.Name.AlienRow2, invaderRect3.name, 50.0f, 500.0f, 50.0f, 75.0f);
+            octopus1 = SpriteManager.find(Sprite.Name.AlienRow2);
+
+            SpriteManager.Add(Sprite.Name.AlienRow2, invaderRect3.name, 100.0f, 500.0f, 50.0f, 75.0f);
+            octopus2 = SpriteManager.find(Sprite.Name.AlienRow2);
+
+            SpriteManager.Add(Sprite.Name.AlienRow2, invaderRect3.name, 150.0f, 500.0f, 50.0f, 75.0f);
+            octopus3 = SpriteManager.find(Sprite.Name.AlienRow2);
+
+            SpriteManager.Add(Sprite.Name.AlienRow2, invaderRect3.name, 200.0f, 500.0f, 50.0f, 75.0f);
+            octopus4 = SpriteManager.find(Sprite.Name.AlienRow2);
+
+            SpriteManager.Add(Sprite.Name.AlienRow2, invaderRect3.name, 250.0f, 500.0f, 50.0f, 75.0f);
+            octopus5 = SpriteManager.find(Sprite.Name.AlienRow2);
+
+            SpriteManager.Add(Sprite.Name.AlienRow2, invaderRect3.name, 300.0f, 500.0f, 50.0f, 75.0f);
+            octopus6 = SpriteManager.find(Sprite.Name.AlienRow2);
+
+            SpriteManager.Add(Sprite.Name.AlienRow2, invaderRect3.name, 350.0f, 500.0f, 50.0f, 75.0f);
+            octopus7 = SpriteManager.find(Sprite.Name.AlienRow2);
+
+            SpriteManager.Add(Sprite.Name.AlienRow2, invaderRect3.name, 400.0f, 500.0f, 50.0f, 75.0f);
+            octopus8 = SpriteManager.find(Sprite.Name.AlienRow2);
+
+            SpriteManager.Add(Sprite.Name.AlienRow2, invaderRect3.name, 450.0f, 500.0f, 50.0f, 75.0f);
+            octopus9 = SpriteManager.find(Sprite.Name.AlienRow2);
+
+            SpriteManager.Add(Sprite.Name.AlienRow2, invaderRect3.name, 500.0f, 500.0f, 50.0f, 75.0f);
+            octopus10 = SpriteManager.find(Sprite.Name.AlienRow2);
+
+            SpriteManager.Add(Sprite.Name.AlienRow2, invaderRect3.name, 550.0f, 500.0f, 50.0f, 75.0f);
+            octopus11 = SpriteManager.find(Sprite.Name.AlienRow2);
+
+            SpriteManager.Add(Sprite.Name.AlienRow3, invaderRect2.name, 50.0f, 400.0f, 50.0f, 75.0f);
+            squid1 = SpriteManager.find(Sprite.Name.AlienRow3);
+
+            SpriteManager.Add(Sprite.Name.AlienRow3, invaderRect2.name, 100.0f, 400.0f, 50.0f, 75.0f);
+            squid2 = SpriteManager.find(Sprite.Name.AlienRow3);
+
+            SpriteManager.Add(Sprite.Name.AlienRow3, invaderRect2.name, 150.0f, 400.0f, 50.0f, 75.0f);
+            squid3 = SpriteManager.find(Sprite.Name.AlienRow3);
+
+            SpriteManager.Add(Sprite.Name.AlienRow3, invaderRect2.name, 200.0f, 400.0f, 50.0f, 75.0f);
+            squid4 = SpriteManager.find(Sprite.Name.AlienRow3);
+
+            SpriteManager.Add(Sprite.Name.AlienRow3, invaderRect2.name, 250.0f, 400.0f, 50.0f, 75.0f);
+            squid5 = SpriteManager.find(Sprite.Name.AlienRow3);
+
+            SpriteManager.Add(Sprite.Name.AlienRow3, invaderRect2.name, 300.0f, 400.0f, 50.0f, 75.0f);
+            squid6 = SpriteManager.find(Sprite.Name.AlienRow3);
+
+            SpriteManager.Add(Sprite.Name.AlienRow3, invaderRect2.name, 350.0f, 400.0f, 50.0f, 75.0f);
+            squid7 = SpriteManager.find(Sprite.Name.AlienRow3);
+
+            SpriteManager.Add(Sprite.Name.AlienRow3, invaderRect2.name, 400.0f, 400.0f, 50.0f, 75.0f);
+            squid8 = SpriteManager.find(Sprite.Name.AlienRow3);
+
+            SpriteManager.Add(Sprite.Name.AlienRow3, invaderRect2.name, 450.0f, 400.0f, 50.0f, 75.0f);
+            squid9 = SpriteManager.find(Sprite.Name.AlienRow3);
+
+            SpriteManager.Add(Sprite.Name.AlienRow2, invaderRect2.name, 500.0f, 400.0f, 50.0f, 75.0f);
+            squid10 = SpriteManager.find(Sprite.Name.AlienRow2);
+
+            SpriteManager.Add(Sprite.Name.AlienRow3, invaderRect2.name, 550.0f, 400.0f, 50.0f, 75.0f);
+            squid11 = SpriteManager.find(Sprite.Name.AlienRow3);
+
+            SpriteManager.Add(Sprite.Name.AlienRow4, invaderRect2.name, 350.0f, 700.0f, 50.0f, 75.0f);
+            squid12 = SpriteManager.find(Sprite.Name.AlienRow4); */
+
+            
+            SpriteManager.Add(Sprite.Name.Explosion, invaderRect3_2.name, 400.0f, 900.0f, 50.0f, 75.0f);
+            gridSprite = SpriteManager.find(Sprite.Name.Explosion);
+            
+
+            //ProxySpriteManager.Add(squid12, 384.0f, 0.0f);
+            //squidProxy = ProxySpriteManager.find(ProxySprite.Name.alienProxy);
+
+
+
+            /*crabBatch.attach(crab1);
+            crabBatch.attach(crab2);
+            crabBatch.attach(crab3);
+            crabBatch.attach(crab4);
+            crabBatch.attach(crab5);
+            crabBatch.attach(crab6);
+            crabBatch.attach(crab7);
+            crabBatch.attach(crab8);
+            crabBatch.attach(crab9);
+            crabBatch.attach(crab10);
+            crabBatch.attach(crab11); */
+
+           // octopusBatch.attach(octopus1);
+          //  octopusBatch.attach(octopus2);
+           /* octopusBatch.attach(octopus3);
+            octopusBatch.attach(octopus4);
+            octopusBatch.attach(octopus5);
+            octopusBatch.attach(octopus6);
+            octopusBatch.attach(octopus7);
+            octopusBatch.attach(octopus8);
+            octopusBatch.attach(octopus9);
+            octopusBatch.attach(octopus10);
+            octopusBatch.attach(octopus11);
+
+            //squidBatch.attach(squid1);
+            //squidBatch.attach(squid2);
+            squidBatch.attach(squid3);
+            squidBatch.attach(squid4);
+            squidBatch.attach(squid5);
+            squidBatch.attach(squid6);
+            squidBatch.attach(squid7);
+            squidBatch.attach(squid8);
+            squidBatch.attach(squid9);
+            squidBatch.attach(squid10);
+            squidBatch.attach(squid11); */
+
+
+            // GameObject GridGO = new GameObject(GameObject.Name.grid, gridSprite.name, 0);
+            gridReal = new Grid(GameObject.Name.grid, Sprite.Name.Explosion, 0, 448.0f, 512.0f);
+            // GameObject crabGame = new GameObject(GameObject.Name.crab, squid12.name, 1);
+            // Crab crabby = new Crab(GameObject.Name.crab, crab1.name, 2, 128.0f, 0.0f, 150.0f, 100.0f);
+           //  Crab crabby2 = new Crab(GameObject.Name.crab, crab1.name, 3, 128.0f, 0.0f, 100.0f, 100.0f);
+            // Octopus octi = new Octopus(GameObject.Name.octopus, octopus1, 1, 128.0f, 85.0f);
+           // Squid squiddy = new Squid(GameObject.Name.squid, squid1, 1, 384.0f, 0.0f);
+
+            PCSTree alienTree = new PCSTree();
+
+            
+                
+
+          //  af.setParent(null);
+
+              alienGrid = GameObjectManager.attachTree(gridReal, alienTree) as GameObjectNode;
+            // alienGrid.tree.Insert(crabGame, GridGO);
+           //  alienGrid.tree.Insert(crabby, crabGame);
+          //   alienGrid.tree.Insert(crabby2, crabGame);
+               gridReal.ActivateSprite(gridBatch, gridReal.proxyX, gridReal.proxyY);
+         //   crabGame.ActivateSprite(crabBatch, 384.0f, 0.0f);
+
+
+           
+            AlienFactory crabFactory = new AlienFactory(crabBatch, alienGrid);
+            AlienFactory octopusFactory = new AlienFactory(octopusBatch, alienGrid);
+            AlienFactory squidFactory = new AlienFactory(squidBatch, alienGrid);
+
+            for (int i = 0; i < 11; i++)
+            {
+                crabFactory.createAlien(AlienObject.AlienType.crab, GameObject.Name.crab, Sprite.Name.AlienRow1, invaderRect.name, 128.0f, 0.0f, i * 50.0f + 100.0f, 800.0f, i);
+                octopusFactory.createAlien(AlienObject.AlienType.octopus, GameObject.Name.octopus, Sprite.Name.AlienRow2, invaderRect3.name, 128.0f, 85.0f, i * 50.0f + 100.0f, 700.0f, i);
+                squidFactory.createAlien(AlienObject.AlienType.squid, GameObject.Name.squid, Sprite.Name.AlienRow3, invaderRect2.name, 384.0f, 0.0f, i * 50.0f + 100.0f, 600.0f, i);
+              // alienGrid.tree.Insert(crab, crabGame);
+               // crab.ActivateSprite(crabBatch, crab.proxyX, crab.proxyY, crab.locX, crab.locY); 
+            }
+
+            
+
+      
+
+
+           
+
+
+             //crabGame.ActivateSprite(crabBatch, 384.0f, 0.0f);
+            // crabby.ActivateSprite(crabBatch, crabby.proxyX, crabby.proxyY, crabby.locX, crabby.locY);
+            // crabby2.ActivateSprite(crabBatch, crabby.proxyX, crabby.proxyY, crabby.locX, crabby.locY);
+            // octi.ActivateSprite(octopusBatch, octi.proxyX, octi.proxyY);
+            // squiddy.ActivateSprite(squidBatch, squiddy.proxyX, squiddy.proxyY);
+             
+             
+
+            // alienGrid.tree.Insert(octi, GridGO);
+            // alienGrid.tree.Insert(squiddy, GridGO);
+
+            
+
+            
+
+          /*  for (int i = 0; i < 11; i++)
+            {
+                af.setParent(alienGrid);
+
+                af.createAlien(AlienObject.AlienType.crab, GameObject.Name.crab, crab1, i, 100.0f + i * 50, 800.0f);
+            } */
+             
+
+            //---------------------------------------------------------------------------------------------------------
+            // Load the Textures
+            //---------------------------------------------------------------------------------------------------------
+
+          
+
+            //---------------------------------------------------------------------------------------------------------
+            // Create Sprites
+            //---------------------------------------------------------------------------------------------------------
+
+            
+            //---------------------------------------------------------------------------------------------------------
+            // Demo variables
+            //---------------------------------------------------------------------------------------------------------
+
+
+        }
+
+        //-----------------------------------------------------------------------------
+        // Game::Update()
+        //      Called once per frame, update data, tranformations, etc
+        //      Use this function to control process order
+        //      Input, AI, Physics, Animation, and Graphics
+        //-----------------------------------------------------------------------------
+        public override void Update()
+        {
+
+
+          //  crab1.changeColor(0.0f, 0.0f, 1.0f, 1.0f);
+          //  crab1.update();
+    /*
+            crab2.changeColor(0.0f, 1.0f, 0.0f, 1.0f);
+            crab2.update();
+
+            crab3.changeColor(1.0f, 0.0f, 0.0f, 1.0f);
+            crab3.update();
+
+            crab4.changeColor(1.0f, 0.5f, 0.2f, 1.0f);
+            crab4.update();
+
+            crab5.changeColor(1.0f, 0.5f, 0.2f, 1.0f);
+            crab5.update();
+
+            crab6.update();
+
+            crab7.update();
+
+            crab8.update();
+
+            crab9.update();
+
+            crab10.update();
+
+           // crab11.update();
+
+            octopus1.update();
+            octopus2.update();
+            octopus3.update();
+            octopus4.update();
+            octopus5.update();
+            octopus6.update();
+            octopus7.update();
+            octopus8.update();
+            octopus9.update();
+            octopus10.update();
+            octopus11.update();
+
+            squid1.update();
+            squid2.update();
+            squid3.update();
+            squid4.update();
+            squid5.update();
+            squid6.update();
+            squid7.update();
+            squid8.update();
+            squid9.update();
+            squid10.update();
+            squid11.update();
+
+            //squid12.update(); */
+
+        /*
+
+                count+=1;
+
+                if (count % 100 == 0)
+                {
+                    squidProxy.update();
+                    //squidProxy.resetImage();
+                   // squidProxy.update();
+                }
+
+                if (count % 200 == 0)
+                {
+                    squidProxy.resetImage();
+                }
+             */
+
+
+           // squidProxy.update();
+            //gridReal.moveGrid();
+           // gridReal.update();
+            AlienObject iterator = alienGrid.tree.root as AlienObject;
+            Debug.Assert(iterator != null);
+
+            while (iterator != null)
+            {
+                // iterator.locX += 2.0f;
+                //iterator.pS.locX += 2.0f;
+                
+
+                if (iterator.pChild != null)
+                {
+                    iterator = iterator.pChild as AlienObject;
+                    iterator.pS.locX += 2.0f;
+                }
+
+                
+                
+                iterator = iterator.pSibling as AlienObject;
+                iterator.update();
+               // iterator.pS.locX += 2.0f;
+               
+               
+            }
+
+            GameObjectManager.update();
+            
+                
+
+
+            
+            // Add your update below this line: ----------------------------
+
+            //	KeyboardTest();
+            //	MouseTest();
+
+            //--------------------------------------------------------
+            // Change Texture, TextureRect, Color
+            //--------------------------------------------------------
+
+            
+            
+
+            //--------------------------------------------------------
+            // Alien - Angles,position
+            //--------------------------------------------------------
+
+
+            //--------------------------------------------------------
+            // Stitch - Scale
+            //--------------------------------------------------------
+
+
+            //--------------------------------------------------------
+            // SpriteBox
+            //--------------------------------------------------------
+
+
+            //--------------------------------------------------------
+            // Swap Color
+            //--------------------------------------------------------
+
+        
+            //--------------------------------------------------------
+            // Swap Screen Rect
+            //--------------------------------------------------------
+
+
+        }
+
+        //-----------------------------------------------------------------------------
+        // Game::Draw()
+        //		This function is called once per frame
+        //	    Use this for draw graphics to the screen.
+        //      Only do rendering here
+        //-----------------------------------------------------------------------------
+        public override void Draw()
+        {
+            /*crab1.render();
+            crab2.render();
+            crab3.render();
+            crab4.render();
+            crab5.render();
+            crab6.render();
+            crab7.render();
+            crab8.render();
+            crab9.render();
+            crab10.render();
+            crab11.render(); */
+
+
+            //squid12.render();
+          //  squidProxy.render();
+
+            
+           // squidProxy.render();
+
+            SpriteBatchManager.Draw();
+          // crabBatch.draw();
+           // octopusBatch.draw();
+
+
+            // draw all objects
+
+        }
+
+        //-----------------------------------------------------------------------------
+        // Game::UnLoadContent()
+        //       unload content (resources loaded above)
+        //       unload all content that was loaded before the Engine Loop started
+        //-----------------------------------------------------------------------------
+        public override void UnLoadContent()
+        {
+
+        }
+
+    }
+}
+

@@ -1,0 +1,106 @@
+﻿using System;
+using System.Diagnostics;
+
+namespace SpaceInvaders
+{
+    class Grid : AlienObject
+    {
+
+        private float xDelta;
+        private float yDelta;
+        private float total;
+        private float iteratorDelta;
+        //public PCSNode root;
+       
+
+        public Grid(GameObject.Name name, Sprite.Name sprite, int index, float xParam, float yParam)
+            : base(name, sprite, index, AlienObject.AlienType.grid)
+        {
+            this.locX = xParam;
+            this.locY = yParam;
+            this.proxyX = this.sprite.image.azulRect.x;
+            this.proxyY = this.sprite.image.azulRect.y;
+            this.xDelta = 1.0f;
+            this.yDelta = 25.0f;
+            this.iteratorDelta = 2.0f;
+            // this.yDelta = 100.0f;
+            this.total = 0.0f;
+           
+        }
+
+        public override void update()
+        {
+            base.update();
+        }
+
+        public void moveGrid()
+        {
+            PCSTreeIterator iterator = new PCSTreeIterator(this);
+            Debug.Assert(iterator != null);
+            PCSNode pcsNode = iterator.First();
+
+            while (pcsNode != null)
+            {
+                GameObject gameObj = pcsNode as GameObject;
+                gameObj.locX += this.xDelta;
+
+              /*  if (gameObj.locX < 55 || gameObj.locX > 841)
+                {
+                    gameObj.locY -= this.yDelta;
+                } */
+                pcsNode = iterator.Next();
+            }
+
+            this.total += this.xDelta;
+
+            if (this.total >= 400.0f || this.total >= 0.0f)
+            {
+                this.xDelta *= -1.0f;
+
+            }
+        }
+
+        public void moveGrid2(PCSTree tree)
+        {
+            
+            AlienObject iterator = tree.root as AlienObject;
+            Debug.Assert(iterator != null);
+            this.total += this.iteratorDelta;
+
+            while (iterator != null)
+            {
+                // iterator.locX += 2.0f;
+                iterator.pS.locX += this.xDelta;
+                iterator.update();
+
+                if (iterator.pChild != null)
+                {
+                    iterator = iterator.pChild as AlienObject;
+                    iterator.pS.locX += this.xDelta;
+                    iterator.update();
+                }
+                if (this.total >= 200.0f || this.total <= 0.0f)
+                {
+                    iterator.pS.locY = iterator.pS.locY - this.yDelta;
+                    iterator.update();
+                }
+
+
+                iterator = iterator.pSibling as AlienObject;
+
+            }
+                
+
+                if (this.total >= 200.0f || this.total <= 0.0f)
+                {
+                    this.xDelta *= -1.0f;
+                    this.iteratorDelta *= -1.0f;
+
+                }
+
+
+            
+        }
+
+    }
+}

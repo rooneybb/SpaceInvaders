@@ -1,0 +1,60 @@
+C:\Preforce\reference\Engine_13.0.3.2.10\SpaceInvaders\SpaceInvaders\bin\Debug\SpaceInvaders.exe.config
+C:\Preforce\reference\Engine_13.0.3.2.10\SpaceInvaders\SpaceInvaders\bin\Debug\SpaceInvaders.exe
+C:\Preforce\reference\Engine_13.0.3.2.10\SpaceInvaders\SpaceInvaders\bin\Debug\SpaceInvaders.pdb
+C:\Preforce\reference\Engine_13.0.3.2.10\SpaceInvaders\SpaceInvaders\bin\Debug\AzulCoreCLRDebug.dll
+C:\Preforce\reference\Engine_13.0.3.2.10\SpaceInvaders\SpaceInvaders\bin\Debug\AzulCoreCLRDebug.pdb
+C:\Preforce\reference\Engine_13.0.3.2.10\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.csprojResolveAssemblyReference.cache
+C:\Preforce\reference\Engine_13.0.3.2.10\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.exe
+C:\Preforce\reference\Engine_13.0.3.2.10\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.pdb
+C:\Users\brooney\Documents\Visual Studio 2013\Projects\Milestone2\SpaceInvaders\SpaceInvaders\bin\Debug\SpaceInvaders.exe.config
+C:\Users\brooney\Documents\Visual Studio 2013\Projects\Milestone2\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.exe
+C:\Users\brooney\Documents\Visual Studio 2013\Projects\Milestone2\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.pdb
+C:\Users\brooney\Documents\Visual Studio 2013\Projects\Milestone2\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.csprojResolveAssemblyReference.cache
+C:\Users\brooney\Documents\Visual Studio 2013\Projects\Milestone2\SpaceInvaders\SpaceInvaders\bin\Debug\SpaceInvaders.exe
+C:\Users\brooney\Documents\Visual Studio 2013\Projects\Milestone2\SpaceInvaders\SpaceInvaders\bin\Debug\SpaceInvaders.pdb
+C:\Users\brooney\Documents\Visual Studio 2013\Projects\Milestone2\SpaceInvaders\SpaceInvaders\bin\Debug\AzulCoreCLRDebug.dll
+C:\Users\brooney\Documents\Visual Studio 2013\Projects\Milestone2\SpaceInvaders\SpaceInvaders\bin\Debug\AzulCoreCLRDebug.pdb
+C:\Users\brooney\Documents\459\workingMilestone2\colBoxWorking\SpaceInvaders\SpaceInvaders\bin\Debug\SpaceInvaders.exe.config
+C:\Users\brooney\Documents\459\workingMilestone2\colBoxWorking\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.exe
+C:\Users\brooney\Documents\459\workingMilestone2\colBoxWorking\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.pdb
+C:\Users\brooney\Documents\459\workingMilestone2\colBoxWorking\SpaceInvaders\SpaceInvaders\bin\Debug\SpaceInvaders.exe
+C:\Users\brooney\Documents\459\workingMilestone2\colBoxWorking\SpaceInvaders\SpaceInvaders\bin\Debug\SpaceInvaders.pdb
+C:\Users\brooney\Documents\459\workingMilestone2\colBoxWorking\SpaceInvaders\SpaceInvaders\bin\Debug\AzulCoreCLRDebug.dll
+C:\Users\brooney\Documents\459\workingMilestone2\colBoxWorking\SpaceInvaders\SpaceInvaders\bin\Debug\AzulCoreCLRDebug.pdb
+C:\Users\brooney\Documents\459\workingMilestone2\colBoxWorking\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.csprojResolveAssemblyReference.cache
+C:\Users\brooney\Documents\Visual Studio 2013\Projects\colBoxWorking\SpaceInvaders\SpaceInvaders\bin\Debug\SpaceInvaders.exe.config
+C:\Users\brooney\Documents\Visual Studio 2013\Projects\colBoxWorking\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.exe
+C:\Users\brooney\Documents\Visual Studio 2013\Projects\colBoxWorking\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.pdb
+C:\Users\brooney\Documents\Visual Studio 2013\Projects\colBoxWorking\SpaceInvaders\SpaceInvaders\bin\Debug\SpaceInvaders.exe
+C:\Users\brooney\Documents\Visual Studio 2013\Projects\colBoxWorking\SpaceInvaders\SpaceInvaders\bin\Debug\SpaceInvaders.pdb
+C:\Users\brooney\Documents\Visual Studio 2013\Projects\colBoxWorking\SpaceInvaders\SpaceInvaders\bin\Debug\AzulCoreCLRDebug.dll
+C:\Users\brooney\Documents\Visual Studio 2013\Projects\colBoxWorking\SpaceInvaders\SpaceInvaders\bin\Debug\AzulCoreCLRDebug.pdb
+C:\Users\brooney\Documents\Visual Studio 2013\Projects\colBoxWorking\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.csprojResolveAssemblyReference.cache
+C:\Users\brooney\Documents\459\workingMilestone2\colBoxWorkingwSprite\SpaceInvaders\SpaceInvaders\bin\Debug\SpaceInvaders.exe.config
+C:\Users\brooney\Documents\459\workingMilestone2\colBoxWorkingwSprite\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.exe
+C:\Users\brooney\Documents\459\workingMilestone2\colBoxWorkingwSprite\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.pdb
+C:\Users\brooney\Documents\459\workingMilestone2\colBoxWorkingwSprite\SpaceInvaders\SpaceInvaders\bin\Debug\SpaceInvaders.exe
+C:\Users\brooney\Documents\459\workingMilestone2\colBoxWorkingwSprite\SpaceInvaders\SpaceInvaders\bin\Debug\SpaceInvaders.pdb
+C:\Users\brooney\Documents\459\workingMilestone2\colBoxWorkingwSprite\SpaceInvaders\SpaceInvaders\bin\Debug\AzulCoreCLRDebug.dll
+C:\Users\brooney\Documents\459\workingMilestone2\colBoxWorkingwSprite\SpaceInvaders\SpaceInvaders\bin\Debug\AzulCoreCLRDebug.pdb
+C:\Users\brooney\Documents\459\workingMilestone2\colBoxWorkingwSprite\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.csprojResolveAssemblyReference.cache
+C:\Users\brooney\Documents\459\workingMilestone2\colBoxWorkingwSprite - Dev\SpaceInvaders\SpaceInvaders\bin\Debug\SpaceInvaders.exe.config
+C:\Users\brooney\Documents\459\workingMilestone2\colBoxWorkingwSprite - Dev\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.exe
+C:\Users\brooney\Documents\459\workingMilestone2\colBoxWorkingwSprite - Dev\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.pdb
+C:\Users\brooney\Documents\459\workingMilestone2\colBoxWorkingwSprite - Dev\SpaceInvaders\SpaceInvaders\bin\Debug\SpaceInvaders.exe
+C:\Users\brooney\Documents\459\workingMilestone2\colBoxWorkingwSprite - Dev\SpaceInvaders\SpaceInvaders\bin\Debug\SpaceInvaders.pdb
+C:\Users\brooney\Documents\459\workingMilestone2\colBoxWorkingwSprite - Dev\SpaceInvaders\SpaceInvaders\bin\Debug\AzulCoreCLRDebug.dll
+C:\Users\brooney\Documents\459\workingMilestone2\colBoxWorkingwSprite - Dev\SpaceInvaders\SpaceInvaders\bin\Debug\AzulCoreCLRDebug.pdb
+C:\Users\brooney\Documents\459\workingMilestone2\colBoxWorkingwSprite - Dev\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.csprojResolveAssemblyReference.cache
+C:\Users\brooney\Documents\459\workingMilestone2\doublyLinkedDeletionWorking\SpaceInvaders\SpaceInvaders\bin\Debug\SpaceInvaders.exe.config
+C:\Users\brooney\Documents\459\workingMilestone2\doublyLinkedDeletionWorking\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.exe
+C:\Users\brooney\Documents\459\workingMilestone2\doublyLinkedDeletionWorking\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.pdb
+C:\Users\brooney\Documents\459\workingMilestone2\dev\SpaceInvaders\SpaceInvaders\bin\Debug\SpaceInvaders.exe.config
+C:\Users\brooney\Documents\459\workingMilestone2\dev\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.exe
+C:\Users\brooney\Documents\459\workingMilestone2\dev\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.pdb
+C:\Users\brooney\Documents\459\workingMilestone2\dev\SpaceInvaders\SpaceInvaders\bin\Debug\SpaceInvaders.exe
+C:\Users\brooney\Documents\459\workingMilestone2\dev\SpaceInvaders\SpaceInvaders\bin\Debug\SpaceInvaders.pdb
+C:\Users\brooney\Documents\459\workingMilestone2\dev\SpaceInvaders\SpaceInvaders\bin\Debug\AzulCoreCLRDebug.dll
+C:\Users\brooney\Documents\459\workingMilestone2\dev\SpaceInvaders\SpaceInvaders\bin\Debug\AzulCoreCLRDebug.pdb
+C:\Users\brooney\Documents\459\workingMilestone2\dev\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.csprojResolveAssemblyReference.cache
+C:\Users\brooney\Documents\459\workingMilestone2\dev\SpaceInvaders\SpaceInvaders\bin\Debug\irrKlang.NET4.dll
